@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget and Finance Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Login Form -->
+<div class="login-container" id="login-container">
+  <h2>Login</h2>
+  <form id="login-form">
+    <input type="text" id="username" placeholder="Enter your name" required>
+    <input type="password" id="password" placeholder="Enter your password" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- Budget and Finance Tracker Section (Initially Hidden) -->
+<div class="container hidden" id="trackerSection">
+  <h1>Budget and Finance Tracker</h1>
+
+  <!-- Form to Add Transactions -->
+  <div class="form">
+    <input type="text" id="description" placeholder="Transaction Description" />
+    <input type="number" id="amount" placeholder="Amount" />
+    <select id="category">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <button id="addTransaction">Add Transaction</button>
+  </div>
+
+  <!-- Timeframe Selection -->
+  <div class="timeframe">
+    <label for="timeframe">Filter by: </label>
+    <select id="timeframe">
+      <option value="daily">Daily</option>
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+      <option value="yearly">Yearly</option>
+    </select>
+  </div>
+
+  <!-- Overview Section -->
+  <div class="overview">
+    <div class="total">
+      <p>Total Income: <span id="totalIncome">$0.00</span></p>
+      <p>Total Expenses: <span id="totalExpense">$0.00</span></p>
+    </div>
+
+    <div class="budget-progress">
+      <div class="progress-bar">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transactions List -->
+  <div class="transactions">
+    <h2>Transactions</h2>
+    <ul id="transactionsList"></ul>
+  </div>
+
+  <!-- Graph Section -->
+  <div class="graph">
+    <canvas id="incomeChart"></canvas>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
